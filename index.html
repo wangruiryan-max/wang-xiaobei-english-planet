@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6c5ce7" />
+    <title>王小贝的英语学习星球</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="王小贝英语" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="回到首页">
+          <span class="brand-mark">✦</span>
+          <span><b>王小贝的英语学习星球</b><small>Wang Xiaobei's English Planet</small></span>
+        </a>
+        <div class="top-stats" aria-label="学习数据">
+          <span>🔥 <b id="streakValue">1</b> 天</span>
+          <span>⭐ <b id="starValue">0</b></span>
+        </div>
+        <button class="avatar" id="avatarButton" aria-label="切换小伙伴">🦁</button>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button data-route="home" class="active"><span>⌂</span>首页</button>
+        <button data-route="map"><span>🗺</span>地图</button>
+        <button data-route="learn"><span>📚</span>学习</button>
+        <button data-route="game"><span>🎮</span>游戏</button>
+        <button data-route="parent"><span>♡</span>成长</button>
+      </nav>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="fallback.js?v=20260922-3"></script>
+    <script>
+      if ("serviceWorker" in navigator && location.protocol !== "file:") {
+        navigator.serviceWorker.register("./service-worker.js");
+      }
+    </script>
+  </body>
+</html>
+
